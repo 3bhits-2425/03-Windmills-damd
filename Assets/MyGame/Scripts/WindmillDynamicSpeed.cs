@@ -3,22 +3,20 @@ using UnityEngine.UI;
 
 public class WindmillGameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] windmills; 
-    [SerializeField] private Slider[] windmillSliders; 
-    [SerializeField] private Button lockButton; 
-    [SerializeField] private Button applyColorButton; 
-    [SerializeField] private GameObject colorTarget; 
+    [SerializeField] private GameObject[] windmills;
+    [SerializeField] private Slider[] windmillSliders;
+    [SerializeField] private Button lockButton;
+    [SerializeField] private GameObject colorTarget;
     private int currentWindmillIndex = 0;
-    private float[] windmillSpeeds = new float[3]; 
+    private float[] windmillSpeeds = new float[3];
     private bool[] isLocked = new bool[3];
     private bool allLocked = false;
     private float maxRotationSpeed = 255f;
-    private float decreaseRate = 100f; 
+    private float decreaseRate = 100f;
 
     private void Start()
     {
         lockButton.onClick.AddListener(LockCurrentWindmill);
-        applyColorButton.onClick.AddListener(ApplyColor);
     }
 
     private void Update()
@@ -71,8 +69,7 @@ public class WindmillGameManager : MonoBehaviour
         if (currentWindmillIndex < windmills.Length && !isLocked[currentWindmillIndex])
         {
             isLocked[currentWindmillIndex] = true;
-            
-            
+
             if (currentWindmillIndex < windmills.Length - 1)
             {
                 currentWindmillIndex++;
@@ -80,16 +77,14 @@ public class WindmillGameManager : MonoBehaviour
             else
             {
                 allLocked = true;
+                ApplyColor();
             }
         }
     }
 
-    public void ApplyColor()
+    private void ApplyColor()
     {
-        if (allLocked)
-        {
-            Color newColor = new Color(windmillSpeeds[0] / 255f, windmillSpeeds[1] / 255f, windmillSpeeds[2] / 255f);
-            colorTarget.GetComponent<Renderer>().material.color = newColor;
-        }
+        Color newColor = new Color(windmillSpeeds[0] / 255f, windmillSpeeds[1] / 255f, windmillSpeeds[2] / 255f);
+        colorTarget.GetComponent<Renderer>().material.color = newColor;
     }
 }
