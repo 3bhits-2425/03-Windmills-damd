@@ -5,11 +5,10 @@ public class WindmillGameManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] windmills;
     [SerializeField] private Slider[] windmillSliders;
-    [SerializeField] private Button lockButton;
+    [SerializeField] private Button[] lockButtons;
     [SerializeField] private GameObject colorTarget;
     [SerializeField] private Light[] windmillLights; // Array for Point Lights
 
-    private int currentWindmillIndex = 0;
     private float[] windmillSpeeds = new float[3];
     private bool[] isLocked = new bool[3];
     private bool allLocked = false;
@@ -18,44 +17,48 @@ public class WindmillGameManager : MonoBehaviour
 
     private void Start()
     {
-        lockButton.onClick.AddListener(LockCurrentWindmill);
+        for (int i = 0; i < lockButtons.Length; i++)
+        {
+            int index = i; // Capture index for lambda expression
+            lockButtons[i].onClick.AddListener(() => LockWindmill(index));
+        }
     }
 
     private void Update()
     {
-        if (!allLocked && currentWindmillIndex < windmills.Length)
+        for (int i = 0; i < windmills.Length; i++)
         {
-            if (!isLocked[currentWindmillIndex])
+            if (!isLocked[i])
             {
                 if (Input.GetKey(KeyCode.Space))
                 {
-                    IncreaseWindmillValue(Time.deltaTime);
+                    IncreaseWindmillValue(i, Time.deltaTime);
                 }
                 else
                 {
-                    DecreaseWindmillValue(Time.deltaTime);
+                    DecreaseWindmillValue(i, Time.deltaTime);
                 }
             }
         }
         RotateWindmills();
     }
 
-    private void IncreaseWindmillValue(float deltaTime)
+    private void IncreaseWindmillValue(int index, float deltaTime)
     {
-        float newValue = Mathf.Clamp(windmillSpeeds[currentWindmillIndex] + (deltaTime * 100f), 0, maxRotationSpeed);
-        windmillSpeeds[currentWindmillIndex] = newValue;
-        windmillSliders[currentWindmillIndex].value = newValue;
-        UpdateWindmillLightColor(currentWindmillIndex);
+        float newValue = Mathf.Clamp(windmillSpeeds[index] + (deltaTime * 100f), 0, maxRotationSpeed);
+        windmillSpeeds[index] = newValue;
+        windmillSliders[index].value = newValue;
+        UpdateWindmillLightColor(index);
     }
 
-    private void DecreaseWindmillValue(float deltaTime)
+    private void DecreaseWindmillValue(int index, float deltaTime)
     {
-        if (!isLocked[currentWindmillIndex])
+        if (!isLocked[index])
         {
-            float newValue = Mathf.Clamp(windmillSpeeds[currentWindmillIndex] - (deltaTime * decreaseRate), 0, maxRotationSpeed);
-            windmillSpeeds[currentWindmillIndex] = newValue;
-            windmillSliders[currentWindmillIndex].value = newValue;
-            UpdateWindmillLightColor(currentWindmillIndex);
+            float newValue = Mathf.Clamp(windmillSpeeds[index] - (deltaTime * decreaseRate), 0, maxRotationSpeed);
+            windmillSpeeds[index] = newValue;
+            windmillSliders[index].value = newValue;
+            UpdateWindmillLightColor(index);
         }
     }
 
@@ -68,22 +71,26 @@ public class WindmillGameManager : MonoBehaviour
         }
     }
 
-    public void LockCurrentWindmill()
+    public void LockWindmill(int index)
     {
-        if (currentWindmillIndex < windmills.Length && !isLocked[currentWindmillIndex])
+        if (!isLocked[index])
         {
-            isLocked[currentWindmillIndex] = true;
-
-            if (currentWindmillIndex < windmills.Length - 1)
+            isLocked[index] = true;
+            allLocked = CheckAllLocked();
+            if (allLocked)
             {
-                currentWindmillIndex++;
-            }
-            else
-            {
-                allLocked = true;
                 ApplyColor();
             }
         }
+    }
+
+    private bool CheckAllLocked()
+    {
+        foreach (bool locked in isLocked)
+        {
+            if (!locked) return false;
+        }
+        return true;
     }
 
     private void ApplyColor()
