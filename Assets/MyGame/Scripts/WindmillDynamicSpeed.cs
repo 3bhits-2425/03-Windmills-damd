@@ -7,6 +7,8 @@ public class WindmillGameManager : MonoBehaviour
     [SerializeField] private Slider[] windmillSliders;
     [SerializeField] private Button lockButton;
     [SerializeField] private GameObject colorTarget;
+    [SerializeField] private Light[] windmillLights; // Array for Point Lights
+
     private int currentWindmillIndex = 0;
     private float[] windmillSpeeds = new float[3];
     private bool[] isLocked = new bool[3];
@@ -43,6 +45,7 @@ public class WindmillGameManager : MonoBehaviour
         float newValue = Mathf.Clamp(windmillSpeeds[currentWindmillIndex] + (deltaTime * 100f), 0, maxRotationSpeed);
         windmillSpeeds[currentWindmillIndex] = newValue;
         windmillSliders[currentWindmillIndex].value = newValue;
+        UpdateWindmillLightColor(currentWindmillIndex);
     }
 
     private void DecreaseWindmillValue(float deltaTime)
@@ -52,6 +55,7 @@ public class WindmillGameManager : MonoBehaviour
             float newValue = Mathf.Clamp(windmillSpeeds[currentWindmillIndex] - (deltaTime * decreaseRate), 0, maxRotationSpeed);
             windmillSpeeds[currentWindmillIndex] = newValue;
             windmillSliders[currentWindmillIndex].value = newValue;
+            UpdateWindmillLightColor(currentWindmillIndex);
         }
     }
 
@@ -86,5 +90,21 @@ public class WindmillGameManager : MonoBehaviour
     {
         Color newColor = new Color(windmillSpeeds[0] / 255f, windmillSpeeds[1] / 255f, windmillSpeeds[2] / 255f);
         colorTarget.GetComponent<Renderer>().material.color = newColor;
+    }
+
+    private void UpdateWindmillLightColor(int index)
+    {
+        if (index < windmillLights.Length && windmillLights[index] != null)
+        {
+            Color lightColor = Color.black;
+            if (index == 0)
+                lightColor = new Color(windmillSpeeds[index] / 255f, 0, 0); // Red
+            else if (index == 1)
+                lightColor = new Color(0, windmillSpeeds[index] / 255f, 0); // Green
+            else if (index == 2)
+                lightColor = new Color(0, 0, windmillSpeeds[index] / 255f); // Blue
+
+            windmillLights[index].color = lightColor;
+        }
     }
 }
