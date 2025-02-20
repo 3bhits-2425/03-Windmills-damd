@@ -364,7 +364,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e7e014fc75af67840bde8b950ec40790, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -747,9 +747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lock
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -889,8 +887,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319249455}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: 0, y: 0, z: 2.46}
+  m_LocalScale: {x: 0.01, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 751585944}
@@ -898,7 +896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -625.63983, y: -345.3}
+  m_AnchoredPosition: {x: -626.35, y: -339.15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &319249457
@@ -944,7 +942,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 319249458}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1962025104}
+        m_TargetAssemblyTypeName: Windmill, Assembly-CSharp
+        m_MethodName: LockWindmill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &319249458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,7 +968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1226,8 +1236,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452981539}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: 0, y: 0, z: 2.46}
+  m_LocalScale: {x: 0.01, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1677443323}
@@ -1235,7 +1245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -617.41, y: -345.3}
+  m_AnchoredPosition: {x: -617.58, y: -339.15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &452981541
@@ -1281,7 +1291,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 452981542}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2100027373}
+        m_TargetAssemblyTypeName: Windmill, Assembly-CSharp
+        m_MethodName: LockWindmill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &452981542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1295,7 +1317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1810,19 +1832,7 @@ MonoBehaviour:
   - {fileID: 1962025102}
   - {fileID: 2100027371}
   - {fileID: 2011620961}
-  windmillSliders:
-  - {fileID: 147161223}
-  - {fileID: 174225431}
-  - {fileID: 742805160}
-  lockButtons:
-  - {fileID: 319249457}
-  - {fileID: 452981541}
-  - {fileID: 1712558932}
   colorTarget: {fileID: 1418233679}
-  windmillLights:
-  - {fileID: 1963449638}
-  - {fileID: 1465698625}
-  - {fileID: 1028721590}
 --- !u!4 &609025579
 Transform:
   m_ObjectHideFlags: 0
@@ -2707,9 +2717,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lock
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2813,16 +2821,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787795258}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.06}
+  m_LocalPosition: {x: 0, y: 0, z: -2.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1712558931}
-  m_Father: {fileID: 1159531002}
+  m_Father: {fileID: 2011620962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 608.99, y: 345.4}
+  m_AnchoredPosition: {x: 608.99, y: 339.22}
   m_SizeDelta: {x: 1218, y: 685.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &787795260
@@ -3234,13 +3242,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.6, y: 1.86, z: -25}
+  m_LocalRotation: {x: 0.026176924, y: 0, z: 0, w: 0.99965733}
+  m_LocalPosition: {x: -9.6, y: 11.14, z: -44.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 3, y: 0, z: 0}
 --- !u!1 &973728785
 GameObject:
   m_ObjectHideFlags: 0
@@ -3760,7 +3768,6 @@ Transform:
   - {fileID: 1962025103}
   - {fileID: 1689531576}
   - {fileID: 178823014}
-  - {fileID: 1754916380}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1150097014
@@ -3934,7 +3941,6 @@ Transform:
   - {fileID: 2011620962}
   - {fileID: 1760872547}
   - {fileID: 690751666}
-  - {fileID: 787795259}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1179302881
@@ -5157,16 +5163,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619814957}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.06}
+  m_LocalPosition: {x: 0, y: 0, z: -2.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 452981540}
-  m_Father: {fileID: 1905883982}
+  m_Father: {fileID: 2100027372}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 617.68, y: 345.4}
+  m_AnchoredPosition: {x: 617.68, y: 339.22}
   m_SizeDelta: {x: 1218, y: 685.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1619814959
@@ -5428,9 +5434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lock
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5669,8 +5673,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712558930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: 0, y: 0, z: 2.46}
+  m_LocalScale: {x: 0.01, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 250536549}
@@ -5678,7 +5682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -609.44, y: -345.3}
+  m_AnchoredPosition: {x: -608.72, y: -339.15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1712558932
@@ -5724,7 +5728,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1712558933}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2011620963}
+        m_TargetAssemblyTypeName: Windmill, Assembly-CSharp
+        m_MethodName: LockWindmill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1712558933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5738,7 +5754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5790,16 +5806,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754916379}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.06}
+  m_LocalPosition: {x: 0, y: 0, z: -2.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 319249456}
-  m_Father: {fileID: 1145235727}
+  m_Father: {fileID: 1962025103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 626.47, y: 345.4}
+  m_AnchoredPosition: {x: 626.47, y: 339.22}
   m_SizeDelta: {x: 1218, y: 685.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754916381
@@ -5960,7 +5976,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 636196831}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2011620962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6138,7 +6154,6 @@ Transform:
   - {fileID: 2100027372}
   - {fileID: 540246361}
   - {fileID: 583126030}
-  - {fileID: 1619814958}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1962025102
@@ -6150,6 +6165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1962025103}
+  - component: {fileID: 1962025104}
   m_Layer: 0
   m_Name: RotorHubR
   m_TagString: Untagged
@@ -6171,8 +6187,24 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1236851120}
+  - {fileID: 1754916380}
   m_Father: {fileID: 1145235727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1962025104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962025102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b9a620a7f2ff64580d24b94a7dc020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedSlider: {fileID: 147161223}
+  lockButton: {fileID: 319249457}
+  windmillLight: {fileID: 1963449638}
 --- !u!1 &1963449636
 GameObject:
   m_ObjectHideFlags: 0
@@ -6383,6 +6415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2011620962}
+  - component: {fileID: 2011620963}
   m_Layer: 0
   m_Name: RotorHubB
   m_TagString: Untagged
@@ -6404,8 +6437,25 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1629338060}
+  - {fileID: 1756425325}
+  - {fileID: 787795259}
   m_Father: {fileID: 1159531002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2011620963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011620961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b9a620a7f2ff64580d24b94a7dc020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedSlider: {fileID: 742805160}
+  lockButton: {fileID: 1712558932}
+  windmillLight: {fileID: 1028721590}
 --- !u!1 &2013483425
 GameObject:
   m_ObjectHideFlags: 0
@@ -6553,6 +6603,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2100027372}
+  - component: {fileID: 2100027373}
   m_Layer: 0
   m_Name: RotorHubG
   m_TagString: Untagged
@@ -6574,8 +6625,24 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1304866369}
+  - {fileID: 1619814958}
   m_Father: {fileID: 1905883982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2100027373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100027371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b9a620a7f2ff64580d24b94a7dc020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedSlider: {fileID: 174225431}
+  lockButton: {fileID: 452981541}
+  windmillLight: {fileID: 1465698625}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -6586,8 +6653,7 @@ SceneRoots:
   - {fileID: 1905883982}
   - {fileID: 1159531002}
   - {fileID: 207551625}
-  - {fileID: 790001753}
-  - {fileID: 1756425325}
   - {fileID: 1418233683}
-  - {fileID: 609025579}
   - {fileID: 89635393}
+  - {fileID: 790001753}
+  - {fileID: 609025579}
